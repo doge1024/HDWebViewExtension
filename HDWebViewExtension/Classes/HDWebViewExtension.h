@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  开启预加载功能
  */
-+ (void)startPreloadWithWebViewClass:(Class<ZHWebViewPoolDelegate>)webClass;
++ (void)startPreloadWithWebViewClass:(Class<HDWebViewPoolDelegate>)webClass;
 
 /**
  开启缓存web请求功能

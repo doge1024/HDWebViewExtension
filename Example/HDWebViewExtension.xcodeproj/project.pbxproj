@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34DC600E212B112C00D0A40E /* ZHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC600C212B112800D0A40E /* ZHWebViewController.m */; };
+		34DC6011212B113B00D0A40E /* ZHWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC6010212B113B00D0A40E /* ZHWebView.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,7 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		44698E2FC910EC4DD43B9E00 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		34DC600C212B112800D0A40E /* ZHWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHWebViewController.m; sourceTree = "<group>"; };
+		34DC600D212B112C00D0A40E /* ZHWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHWebViewController.h; sourceTree = "<group>"; };
+		34DC600F212B113B00D0A40E /* ZHWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHWebView.h; sourceTree = "<group>"; };
+		34DC6010212B113B00D0A40E /* ZHWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHWebView.m; sourceTree = "<group>"; };
+		44698E2FC910EC4DD43B9E00 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HDWebViewExtension_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDWebViewExtension_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,10 +65,10 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		785F5E3ED1CF32DAD2E8460C /* Pods-HDWebViewExtension_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWebViewExtension_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDWebViewExtension_Example/Pods-HDWebViewExtension_Example.release.xcconfig"; sourceTree = "<group>"; };
-		7D0741FBAB67319820B89764 /* HDWebViewExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HDWebViewExtension.podspec; path = ../HDWebViewExtension.podspec; sourceTree = "<group>"; };
+		7D0741FBAB67319820B89764 /* HDWebViewExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HDWebViewExtension.podspec; path = ../HDWebViewExtension.podspec; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D855ABEB1D9AAC94CDF2459 /* Pods_HDWebViewExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDWebViewExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9736180CD4FDE7A8B727BC3C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		9736180CD4FDE7A8B727BC3C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A5D224CD7FDD7624B7F65859 /* Pods-HDWebViewExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWebViewExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDWebViewExtension_Tests/Pods-HDWebViewExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7BB3CD6421D49E212247A5C /* Pods-HDWebViewExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWebViewExtension_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDWebViewExtension_Tests/Pods-HDWebViewExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DDD52E22D45D7B468505220E /* Pods-HDWebViewExtension_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWebViewExtension_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDWebViewExtension_Example/Pods-HDWebViewExtension_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +143,10 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HDViewController.h */,
 				6003F5A6195388D20070C39A /* HDViewController.m */,
+				34DC600D212B112C00D0A40E /* ZHWebViewController.h */,
+				34DC600C212B112800D0A40E /* ZHWebViewController.m */,
+				34DC600F212B113B00D0A40E /* ZHWebView.h */,
+				34DC6010212B113B00D0A40E /* ZHWebView.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -356,8 +366,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* HDAppDelegate.m in Sources */,
+				34DC6011212B113B00D0A40E /* ZHWebView.m in Sources */,
 				6003F5A7195388D20070C39A /* HDViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				34DC600E212B112C00D0A40E /* ZHWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
