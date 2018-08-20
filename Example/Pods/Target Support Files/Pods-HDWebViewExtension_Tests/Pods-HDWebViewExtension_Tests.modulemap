@@ -1,0 +1,6 @@
+framework module Pods_HDWebViewExtension_Tests {
+  umbrella header "Pods-HDWebViewExtension_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

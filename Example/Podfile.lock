@@ -1,0 +1,16 @@
+PODS:
+  - HDWebViewExtension (0.1.0)
+
+DEPENDENCIES:
+  - HDWebViewExtension (from `../`)
+
+EXTERNAL SOURCES:
+  HDWebViewExtension:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HDWebViewExtension: fbce10438fa893a018e21973ec74bf51185c46c4
+
+PODFILE CHECKSUM: 4af91839221f86faa7e2badbef1218abbf76e2b4
+
+COCOAPODS: 1.5.3

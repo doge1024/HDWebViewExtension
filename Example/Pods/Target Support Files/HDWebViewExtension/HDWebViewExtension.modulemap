@@ -1,0 +1,6 @@
+framework module HDWebViewExtension {
+  umbrella header "HDWebViewExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

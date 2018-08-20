@@ -1,0 +1,22 @@
+{
+  "name": "HDWebViewExtension",
+  "version": "0.1.0",
+  "summary": "A short description of HDWebViewExtension.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/harddog/HDWebViewExtension",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "harddog": "867129306@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/harddog/HDWebViewExtension.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HDWebViewExtension/Classes/**/*"
+}
