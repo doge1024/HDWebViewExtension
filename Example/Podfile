@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HDWebViewExtension_Example' do
+  pod 'HDWebViewExtension', :path => '../'
+
+  target 'HDWebViewExtension_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
