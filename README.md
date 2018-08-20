@@ -20,6 +20,17 @@ it, simply add the following line to your Podfile:
 pod 'HDWebViewExtension'
 ```
 
+## Run Demo
+查看 HDAppDelegate.m， 通过 set use YES or NO, 来查看效果
+
+## Use
+```
+#import <HDWebViewExtension/HDWebViewExtension.h>
+
+[HDWebViewExtension startPreloadWithWebViewClass:[ZHWebView class]];
+[HDWebViewExtension startCacheWebRequest];
+```
+
 ## Author
 
 harddog, 867129306@qq.com
