@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     self.webView.frame = self.view.bounds;
-    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com/"];
+    NSURL *url = [NSURL URLWithString:@"https://www.xiaoyinggroup.com/index/index"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url
                                              cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                          timeoutInterval:45];
