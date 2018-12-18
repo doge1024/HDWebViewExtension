@@ -23,19 +23,6 @@
  */
 + (void)startCacheWebRequest {
     // 默认缓存js
-    HDURLProtocolCheckUrl canInitBlock = ^(NSURLRequest *request) {
-        NSPredicate *predicatejs = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"^http.*.js"];
-        NSPredicate *predicatepng = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"^http.*.png"];
-        NSPredicate *predicatejpg = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"^http.*.jpg"];
-        NSString *url = request.URL.absoluteString;
-        if ([predicatejs evaluateWithObject:url]
-            || [predicatepng evaluateWithObject:url]
-            || [predicatejpg evaluateWithObject:url]) {
-            return YES;
-        }
-        return NO;
-    };
-    [HDWebURLProtocol setRequestFilter:[NSSet setWithObjects:canInitBlock, nil]];
     [HDWebURLProtocol registerClass];
 }
 

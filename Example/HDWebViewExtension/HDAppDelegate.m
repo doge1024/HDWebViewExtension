@@ -9,6 +9,7 @@
 #import "HDAppDelegate.h"
 #import <HDWebViewExtension/HDWebViewExtension.h>
 #import "ZHWebView.h"
+#import <objc/runtime.h>
 
 @implementation HDAppDelegate
 
@@ -16,14 +17,48 @@
 {
     // Override point for customization after application launch.
     
-#warning CHANGE THIS, 更改此值，重新运行查看效果, log会输出：time is 0.984850
-    BOOL use = NO;
-    if (use) {
-        [HDWebViewExtension startPreloadWithWebViewClass:[ZHWebView class]];
-        [HDWebViewExtension startCacheWebRequest];
-    }
+    [HDWebViewExtension startPreloadWithWebViewClass:[ZHWebView class]];
+    [HDWebViewExtension startCacheWebRequest];
+    [HDAppDelegate exchange];
     return YES;
 }
+
+
++ (void)exchange {
+    
+    Class WKCustomProtocolClass = object_getClass(NSClassFromString(@"HDWebURLProtocol")); // HDWebURLProtocol is ok
+    
+    SEL canInitWithRequest = NSSelectorFromString(@"canInitWithRequest:");
+    SEL af_canInitWithRequest = NSSelectorFromString(@"fix_canInitWithRequest:");
+    
+    BOOL add1 = class_addMethod(WKCustomProtocolClass,
+                                canInitWithRequest,
+                                class_getMethodImplementation(WKCustomProtocolClass, canInitWithRequest),
+                                "B@:@");
+    
+    BOOL add2 = class_addMethod(WKCustomProtocolClass,
+                                af_canInitWithRequest,
+                                (IMP)af_canInitWithRequest2,
+                                "B@:@");
+    
+    NSLog(@"%d,%d", add1, add2);
+    
+    Method orgi = class_getClassMethod(WKCustomProtocolClass, canInitWithRequest);
+    Method after = class_getClassMethod(WKCustomProtocolClass, af_canInitWithRequest);
+    
+    method_exchangeImplementations(orgi, after);
+}
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
+BOOL af_canInitWithRequest2(id sender, SEL cmd, NSURLRequest *req) {
+    SEL canInitWithRequest = NSSelectorFromString(@"fix_canInitWithRequest:");
+    return [sender performSelector:canInitWithRequest withObject:req];
+}
+
+#pragma clang diagnostic pop
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

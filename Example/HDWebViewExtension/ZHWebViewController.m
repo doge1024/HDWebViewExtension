@@ -32,12 +32,13 @@
     [super viewDidLoad];
     
     self.webView.frame = self.view.bounds;
-    NSURL *url = [NSURL URLWithString:@"https://www.xiaoyinggroup.com/index/index"];
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url
                                              cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                          timeoutInterval:45];
     [self.webView loadRequest:request];
 }
+
 
 - (ZHWebView *)webView {
     if (_webView == nil) {
