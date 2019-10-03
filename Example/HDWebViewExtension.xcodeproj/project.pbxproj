@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		34DC600E212B112C00D0A40E /* ZHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC600C212B112800D0A40E /* ZHWebViewController.m */; };
 		34DC6011212B113B00D0A40E /* ZHWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC6010212B113B00D0A40E /* ZHWebView.m */; };
+		34F5C49521C9EADC003709BA /* hook.js in Resources */ = {isa = PBXBuildFile; fileRef = 34F5C49421C9EADC003709BA /* hook.js */; };
+		34F5C49821CA4F9D003709BA /* PostScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F5C49721CA4F9D003709BA /* PostScriptMessageHandler.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -43,6 +45,9 @@
 		34DC600D212B112C00D0A40E /* ZHWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHWebViewController.h; sourceTree = "<group>"; };
 		34DC600F212B113B00D0A40E /* ZHWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHWebView.h; sourceTree = "<group>"; };
 		34DC6010212B113B00D0A40E /* ZHWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHWebView.m; sourceTree = "<group>"; };
+		34F5C49421C9EADC003709BA /* hook.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = hook.js; sourceTree = "<group>"; };
+		34F5C49621CA4F9D003709BA /* PostScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostScriptMessageHandler.h; sourceTree = "<group>"; };
+		34F5C49721CA4F9D003709BA /* PostScriptMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostScriptMessageHandler.m; sourceTree = "<group>"; };
 		44698E2FC910EC4DD43B9E00 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HDWebViewExtension_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDWebViewExtension_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +150,9 @@
 				6003F5A6195388D20070C39A /* HDViewController.m */,
 				34DC600D212B112C00D0A40E /* ZHWebViewController.h */,
 				34DC600C212B112800D0A40E /* ZHWebViewController.m */,
+				34F5C49621CA4F9D003709BA /* PostScriptMessageHandler.h */,
+				34F5C49721CA4F9D003709BA /* PostScriptMessageHandler.m */,
+				34F5C49421C9EADC003709BA /* hook.js */,
 				34DC600F212B113B00D0A40E /* ZHWebView.h */,
 				34DC6010212B113B00D0A40E /* ZHWebView.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -257,6 +265,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = harddog;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 5CJEBBFK9A;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -290,6 +301,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				34F5C49521C9EADC003709BA /* hook.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +380,7 @@
 				6003F59E195388D20070C39A /* HDAppDelegate.m in Sources */,
 				34DC6011212B113B00D0A40E /* ZHWebView.m in Sources */,
 				6003F5A7195388D20070C39A /* HDViewController.m in Sources */,
+				34F5C49821CA4F9D003709BA /* PostScriptMessageHandler.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				34DC600E212B112C00D0A40E /* ZHWebViewController.m in Sources */,
 			);
@@ -497,6 +510,7 @@
 			baseConfigurationReference = DDD52E22D45D7B468505220E /* Pods-HDWebViewExtension_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5CJEBBFK9A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDWebViewExtension/HDWebViewExtension-Prefix.pch";
 				INFOPLIST_FILE = "HDWebViewExtension/HDWebViewExtension-Info.plist";
@@ -512,6 +526,7 @@
 			baseConfigurationReference = 785F5E3ED1CF32DAD2E8460C /* Pods-HDWebViewExtension_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5CJEBBFK9A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDWebViewExtension/HDWebViewExtension-Prefix.pch";
 				INFOPLIST_FILE = "HDWebViewExtension/HDWebViewExtension-Info.plist";

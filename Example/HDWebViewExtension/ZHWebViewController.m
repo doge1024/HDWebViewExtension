@@ -9,6 +9,7 @@
 #import "ZHWebViewController.h"
 #import "ZHWebView.h"
 #import <HDWebViewExtension/HDWebViewExtension.h>
+#import "PostScriptMessageHandler.h"
 
 @interface ZHWebViewController ()<WKNavigationDelegate>
 
@@ -32,20 +33,60 @@
     [super viewDidLoad];
     
     self.webView.frame = self.view.bounds;
-    NSURL *url = [NSURL URLWithString:@"https://www.xiaoyinggroup.com/index/index"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url
-                                             cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                         timeoutInterval:45];
-    [self.webView loadRequest:request];
+    
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn2 setBackgroundColor:[UIColor greenColor]];
+    [btn2 setTitle:@"load" forState:UIControlStateNormal];
+    btn2.frame = CGRectMake(0, 250, 50, 30);
+    [self.view addSubview:btn2];
+    [btn2 addTarget:self action:@selector(btnAction2) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setBackgroundColor:[UIColor greenColor]];
+    [btn setTitle:@"post" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(0, 300, 50, 30);
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)btnAction2 {
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
+}
+
+- (void)btnAction {
+    NSString *str = @"\
+    fetch(\"/name\", { \
+    headers: { \
+    \"Content-Type\": \"application/x-www-form-urlencoded\", \
+    \"HDProtocolWebPostKey\": \"1\" \
+    }, \
+    method: \"PUT\", \
+    body: \"name=llllllll\" \
+    }).then(response => response.json()).then(response => { \
+    console.log(response) \
+    }).catch((err)=>{ \
+    console.log(err) \
+    }) ";
+    [self.webView evaluateJavaScript:str completionHandler:^(id _Nullable rep, NSError * _Nullable error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 - (ZHWebView *)webView {
     if (_webView == nil) {
-        if ([HDWebViewPool shareInstance].webViewClass) {
-            _webView = [[HDWebViewPool shareInstance] getReusedWebView];
-        } else {
-            _webView = [[ZHWebView alloc] init];
-        }
+        
+        WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+        NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"hook" ofType:@"js"]];
+        NSString *js = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+        WKUserContentController *userContent = [[WKUserContentController alloc] init];
+        [userContent addScriptMessageHandler:[[PostScriptMessageHandler alloc] init] name:@"IMYXHR"];
+        [userContent addUserScript:script];
+        WKPreferences *preferences = [[WKPreferences alloc] init];
+        preferences.javaScriptEnabled = YES;
+        config.preferences = [[WKPreferences alloc] init];
+        config.userContentController = userContent;
+        _webView = [[ZHWebView alloc] initWithFrame:CGRectZero configuration:config];
         _webView.navigationDelegate = self;
         [self.view addSubview:_webView];
     }

@@ -16,12 +16,8 @@
 {
     // Override point for customization after application launch.
     
-#warning CHANGE THIS, 更改此值，重新运行查看效果, log会输出：time is 0.984850
-    BOOL use = NO;
-    if (use) {
-        [HDWebViewExtension startPreloadWithWebViewClass:[ZHWebView class]];
-        [HDWebViewExtension startCacheWebRequest];
-    }
+    [HDWebViewExtension startPreloadWithWebViewClass:[ZHWebView class]];
+    [HDWebViewExtension startCacheWebRequest];
     return YES;
 }
 
